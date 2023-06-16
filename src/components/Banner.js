@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Nav, } from "react-bootstrap";
 import { ArrowRightCircle, QrCode } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -8,23 +8,11 @@ import QRCodeStyling from "qr-code-styling";
 import qr_logo from "../assets/img/qr_logo.png";
 import emailjs from "emailjs-com";
 import React from 'react';
-import { QrReader } from 'react-qr-reader';
-// import { Email } from "./smtp.js";
+import { connectWallet, getCurrentWalletConnected } from "../utils/interact";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
-const qrCode = new QRCodeStyling({
-  width: 300,
-  height: 300,
-  image:
-  qr_logo,
-  dotsOptions: {
-    color: "#000000",
-    type: "rounded"
-  },
-  imageOptions: {
-    crossOrigin: "anonymous",
-    margin: 5
-  },
-});
+
+
 
 
 export const Banner = () => {
@@ -37,24 +25,12 @@ export const Banner = () => {
   const toRotate = ["BlockChain", "NFT Developer", "Web3 Developer"];
   const period = 2000;
 
-  //qrcode
-  // const [url, setUrl] = useState("");
-  // const [fileExt] = useState("png");
-  // const ref = useRef(null);
-  const [ticketurl, seturl] = useState("");
+ 
+
   const serviceID = 'service_ht3538';
   const templateID = 'template_3j0swxb';
   const public_key = 'hHDC_0ICfYvN290Ae';
 
-  // useEffect(() => {
-  //   qrCode.append(ref.current);
-  // }, []);
-
-  // useEffect(() => {
-  //   qrCode.update({
-  //     data: url
-  //   });
-  // }, [url]);
   //qrcode url setting
   // const onUrlChange = (event) => {
   //   setUrl(event);
@@ -69,23 +45,23 @@ export const Banner = () => {
   //qrcode
    
   //email
-  // const email_send = async () => {
-  //   var tokenid = await totalSupplyOfcall();
-  //   var img_url = '<img src="https://api.qrserver.com/v1/create-qr-code/?data='+tokenid+'&amp;size=200x200" alt="QRcode error" />';
-  //   console.log(tokenid)
-  //   const emailParams = {
-  //     to_name: "kaikai",
-  //     to_email: "karta2398980@gmail.com",
-  //     qr_html: img_url,
-  //   };
-  //   console.log(img_url)
-  //   emailjs.send(serviceID, templateID, emailParams, public_key)
-  //       .then((result) => {
-  //           console.log(result);    
-  //       }, (error) => {
-  //           console.log(error)
-  //       })
-  // };
+  const email_send = async () => {
+    var tokenid = await totalSupplyOfcall();
+    var img_url = '<img src="https://api.qrserver.com/v1/create-qr-code/?data='+tokenid+'&amp;size=200x200" alt="QRcode error" />';
+    console.log(tokenid)
+    const emailParams = {
+      to_name: "kaikai",
+      to_email: "karta2398980@gmail.com",
+      qr_html: img_url,
+    };
+    console.log(img_url)
+    emailjs.send(serviceID, templateID, emailParams, public_key)
+        .then((result) => {
+            console.log(result);    
+        }, (error) => {
+            console.log(error)
+        })
+  };
 
   //email
 
@@ -145,14 +121,21 @@ export const Banner = () => {
 
 
   //mintNFT
-  // const [count, setcount] = useState(1);
-  // const onMint = async () => {
-  //   setcount(1);
-  //   console.log(count);
-  //   const { status } = await mintNFT(count);
-  //   console.log(status);
-  //   alert(status);
-  // };
+  const [count, setcount] = useState(1);
+  const onMint = async () => {
+    setcount(1);
+    console.log(count);
+    const { success, status } = await mintNFT(count);
+    console.log(status);
+    alert(status);
+    if (success) {
+      alert(`購票資訊已送出。\n姓名：${name}\n電話：${phone}\nEmail：${email}\n請至Email查收您的入場QRcode`);
+      email_send();
+    }else {
+      alert("購票失敗!");
+    }
+
+  };
 
   //verify nft 
   
@@ -171,7 +154,7 @@ export const Banner = () => {
       alert(status);
     }
   };
-  
+
   //nftused return(uint256)
   const OwnerOfcall = async(data)=>{
     tokenId = data;
@@ -187,11 +170,9 @@ export const Banner = () => {
       console.log(success);
       console.log(success.toString());
       const baseuri = await tokenURICall(data);
-      alert(status);
       fetch(baseuri)
         .then((response) => response.json())
-        .then((json) => seturl(json.image));
-      //alert(status+"   門票網址：https://sapphire-subsequent-pelican-620.mypinata.cloud/ipfs/QmTaGeVoQ6juoukCPfj87vteCqXGijXoa3aEzTcsW1y3kp/00.png");
+        .then((json) => alert(status+"\n"+json.image));
       return success;
     }
     
@@ -200,91 +181,179 @@ export const Banner = () => {
   const totalSupplyOfcall = async()=>{
     const { status } = await totalSupply();
     console.log(status);
-    alert(parseInt(status.toString())-1);
+    //alert(parseInt(status.toString())-1);
     return parseInt(status.toString())-1;
   }
   
 
   //tokenURI
   const tokenURICall = async(data)=>{
-    
     tokenId = data;
-    console.log(tokenId);
     if (tokenId < 0 || tokenId > 100) {
       console.log("Please input tokenId for the range 0~99.");
       alert("Please input tokenId for the range 0~99.");
     } else {
       const { status } = await tokenURI(tokenId);
-      console.log(status);
-      //alert("https://sapphire-subsequent-pelican-620.mypinata.cloud/ipfs/QmTaGeVoQ6juoukCPfj87vteCqXGijXoa3aEzTcsW1y3kp/00.png");
-      // fetch(status)
-      //   .then((response) => response.json())
-      //   .then((json) => alert(json.image));
+      //console.log(status);
+      //alert(status);
     return status;
     }
   }
-  
-  const ticketURL = () => {
-    //const url = ticketurl;
-    //console.log(url);
-    const url = "https://sapphire-subsequent-pelican-620.mypinata.cloud/ipfs/QmTaGeVoQ6juoukCPfj87vteCqXGijXoa3aEzTcsW1y3kp/00.png";
-    var newTab = window.open(url, '_blank');
-    // eslint-disable-next-line no-unused-expressions
-    newTab.location;
+
+
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+
+
+
+
+
+  ////////////////////////////////////////////////////////////////
+  const [scrolled, setScrolled] = useState(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+useEffect(() => {
+  //Navbar scroll
+  function onScroll() {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
   }
+  //walletAddressListener is used switch address 
+  async function walletListener() {
+    //TODO: implement
+    const { address, status } = await getCurrentWalletConnected();
+    setWallet(address);
+    setStatus(status);
+    addWalletListener();
+  }
+  walletListener();
+  window.addEventListener("scroll", onScroll);
+
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
 
 
+//Wallet
+const [walletAddress, setWallet] = useState("");
+const [status, setStatus] = useState("");
+
+function addWalletListener() {
+  if (window.ethereum) {
+    window.ethereum.on("accountsChanged", (accounts) => {
+      if (accounts.length > 0) {
+        setWallet(accounts[0]);
+        setStatus("The web3 is connected!");
+      } else {
+        setWallet("");
+        setStatus("🦊 Connect to Metamask using the top right button.");
+      }
+    });
+  } else {
+    setStatus(
+      <p>
+        {" "}
+        🦊{" "}
+        <a
+          target="_blank"
+          href={`https://metamask.io/download.html`}
+          rel="noreferrer"
+        >
+          You must install Metamask, a virtual Ethereum wallet, in your
+          browser.
+        </a>
+      </p>
+    );
+  }
+}
 
 
 
+const connectWalletPressed = async () => {
+  //TODO: implement
+  const walletResponse = await connectWallet();
+  setStatus(walletResponse.status);
+  setWallet(walletResponse.address);
+  console.log(status)
+};
+  ////////////////////////////////////////////////////////////////
 
+
+
+  //提交購票資訊
+  const handleSubmit = () => {
+    if(walletAddress && walletAddress.length > 0){
+      onMint();
+    }else{
+      alert(`購票資訊已送出。\n姓名：${name}\n電話：${phone}\nEmail：${email}`);
+    }
+    
+    
+  };
 
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
-        <Col xs={12} md={6} xl={7}>
-            
-              <div>
-            
-                <h4>TokenId: {data}</h4>
-                <QrReader
-                  onResult={(result, error) => {
-                    if (!!result) {
-                      setData(result?.text);
-                      QRdata_verify(result?.text);
-                    }
+      <div className="App" align="center">
+      <h1>購票系統</h1>
+      
+        <label>
+          姓名：
+          <input
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          電話：
+          <input
+            type="tel"
+            value={phone}
+            onChange={(event) => setPhone(event.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Email：
+          <input
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </label>
+        
+        
+        <br />
 
-                    if (!!error) {
-                      console.info(error);
-                    }
-                  }}
-                  scanDelay={200}
-                  style={{ width: '100%' }}
-                />
+
+              
+              <div text={walletAddress} title="Copy Wallet address">
+                <button className="square" onClick={connectWalletPressed} >
+                  <span>
+                    {walletAddress && walletAddress.length > 0
+                      ? `已連結錢包: ${walletAddress.substring(
+                          0,
+                          6
+                        )}...${walletAddress.substring(38)}`
+                      : "點擊以連結錢包"}
+                  </span>
+                </button>
               </div>
 
-          </Col>
-          <Col xs={12} md={6} xl={7}>
-            
-                {/* <div>             
-                  <button onClick={onMint}>
-                    購買NFT門票! <ArrowRightCircle size={30} />
-                  </button>
-                  
-                </div> */}
-                <div>
-                  <button onClick={ticketURL}>
-                    查看門票  <ArrowRightCircle size={30} />
-                  </button>
-                </div>
-                
-              
-          </Col>
-                
-        </Row>
 
+        <div>
+
+          <button onClick={handleSubmit}>確認購買</button>
+        </div>
+        
+    </div>
       </Container>
     </section>
   );

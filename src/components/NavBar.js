@@ -88,7 +88,7 @@ const NavBar = ({ signOut }) => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <Nav className="LOGO">NFT tickets test</Nav>
+            <Nav className="LOGO">NFT tickets Sell</Nav>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -118,17 +118,10 @@ const NavBar = ({ signOut }) => {
                 >
                   <img src={navIcon5} alt="" />
                 </a>
-                <a
-                  href="mailto:F110110132@nkust.edu.tw"
-                  target="_blank"
-                  title="Email"
-                  rel="noreferrer"
-                >
-                  <img src={navIcon2} alt="" />
-                </a>
+                
                 
                 <a
-                  href="https://github.com/kaikaichumi/NFTicket_test/"
+                  href="https://kaikaichumi.github.io/NFT-Tickets-Sell/"
                   target="_blank"
                   title="GitHub"
                   rel="noreferrer"
@@ -138,18 +131,7 @@ const NavBar = ({ signOut }) => {
                 
                 
               </div>
-              <CopyToClipboard text={walletAddress} title="Copy Wallet address">
-                <button className="vvd" onClick={connectWalletPressed}>
-                  <span>
-                    {walletAddress && walletAddress.length > 0
-                      ? `Connected: ${walletAddress.substring(
-                          0,
-                          6
-                        )}...${walletAddress.substring(38)}`
-                      : "Connect Wallet"}
-                  </span>
-                </button>
-              </CopyToClipboard>
+              
             </span>
           </Navbar.Collapse>
         </Container>
