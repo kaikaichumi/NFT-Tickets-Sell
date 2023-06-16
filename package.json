@@ -1,8 +1,8 @@
 {
-    "name": "NFT-Tickets",
+    "name": "NFT-Tickets-Sell",
     "version": "0.1.1",
     "private": false,
-    "homepage": "https://kaikaichumi.github.io/NFT-Tickets/",
+    "homepage": "https://kaikaichumi.github.io/NFT-Tickets-Sell/",
     "dependencies": {
         "@alch/alchemy-web3": "^1.4.7",
         "@nomicfoundation/hardhat-toolbox": "^2.0.0",
