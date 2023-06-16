@@ -335,7 +335,7 @@ const connectWalletPressed = async () => {
 
               
               <div text={walletAddress} title="Copy Wallet address">
-                <button className="square" onClick={connectWalletPressed} >
+                <button className="connectwallet" onClick={connectWalletPressed} >
                   <span>
                     {walletAddress && walletAddress.length > 0
                       ? `已連結錢包: ${walletAddress.substring(
