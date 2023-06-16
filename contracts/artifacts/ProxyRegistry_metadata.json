@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "proxies",
+				"outputs": [
+					{
+						"internalType": "contract OwnableDelegateProxy",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Boneboss_flat.sol": "ProxyRegistry"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Boneboss_flat.sol": {
+			"keccak256": "0x65c50c88c660cc1d6d4ec09e7f1b678efe3d248a9226108a6912a8b7d4cb16de",
+			"urls": [
+				"bzz-raw://dd88630fc0f18ef31afc493a4cc820b737dbfca4afbd914eb0aae93044fb15c9",
+				"dweb:/ipfs/QmdF2WAY4shRC6BkVQNTvfv36AehJgqHrwwWwf75hfW3Hp"
+			]
+		}
+	},
+	"version": 1
+}

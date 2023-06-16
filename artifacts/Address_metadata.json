@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts\\Boneboss_flattened.sol": "Address"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts\\Boneboss_flattened.sol": {
+			"keccak256": "0x8c57177e7693a994c76e7449528ec156488c17a8c6af5a85ee5403e044032431",
+			"urls": [
+				"bzz-raw://83777fa2f9832189636596a50e2796767bea65b2e6e6d06f15ea99b9263769a3",
+				"dweb:/ipfs/QmPJbUdCjFLWKgMuojo9GhTeWCPRX9X1yeAfcHQHciv52p"
+			]
+		}
+	},
+	"version": 1
+}
