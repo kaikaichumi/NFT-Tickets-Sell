@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/NFT-Tickets/static/css/main.c3877867.css",
-    "main.js": "/NFT-Tickets/static/js/main.08872531.js",
-    "static/media/banner-bg4.png": "/NFT-Tickets/static/media/banner-bg4.04db80474e7142a9d078.png",
-    "static/media/qr_logo.png": "/NFT-Tickets/static/media/qr_logo.13e20bb44080b4f5c458.png",
-    "static/media/CentraNo2-Bold.ttf": "/NFT-Tickets/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
-    "static/media/CentraNo2-Medium.ttf": "/NFT-Tickets/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
-    "static/media/CentraNo2-Book.ttf": "/NFT-Tickets/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
-    "static/media/footer-bg.png": "/NFT-Tickets/static/media/footer-bg.7bd67c0f73571d0acc02.png",
-    "static/media/OpenSea_icon.png": "/NFT-Tickets/static/media/OpenSea_icon.9ae7f9592eaca1c4d92b.png",
-    "static/media/nav-icon4.svg": "/NFT-Tickets/static/media/nav-icon4.b0c00e77c4868a36af59d1f5d7741bf6.svg",
-    "static/media/nav-icon6.svg": "/NFT-Tickets/static/media/nav-icon6.ad671596bb90b54781e8d5109bfba23a.svg",
-    "static/media/nav-icon3.svg": "/NFT-Tickets/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
-    "static/media/nav-icon2.svg": "/NFT-Tickets/static/media/nav-icon2.12634321b98fb0248357c3aab640c2bf.svg",
-    "index.html": "/NFT-Tickets/index.html",
-    "static/media/nav-icon1.svg": "/NFT-Tickets/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
-    "main.c3877867.css.map": "/NFT-Tickets/static/css/main.c3877867.css.map",
-    "main.08872531.js.map": "/NFT-Tickets/static/js/main.08872531.js.map"
+    "main.css": "/NFT-Tickets-Sell/static/css/main.8caf91d6.css",
+    "main.js": "/NFT-Tickets-Sell/static/js/main.87ff3b33.js",
+    "static/media/banner-bg4.png": "/NFT-Tickets-Sell/static/media/banner-bg4.04db80474e7142a9d078.png",
+    "static/media/qr_logo.png": "/NFT-Tickets-Sell/static/media/qr_logo.13e20bb44080b4f5c458.png",
+    "static/media/CentraNo2-Bold.ttf": "/NFT-Tickets-Sell/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/NFT-Tickets-Sell/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
+    "static/media/CentraNo2-Book.ttf": "/NFT-Tickets-Sell/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/footer-bg.png": "/NFT-Tickets-Sell/static/media/footer-bg.7bd67c0f73571d0acc02.png",
+    "static/media/OpenSea_icon.png": "/NFT-Tickets-Sell/static/media/OpenSea_icon.9ae7f9592eaca1c4d92b.png",
+    "static/media/nav-icon4.svg": "/NFT-Tickets-Sell/static/media/nav-icon4.b0c00e77c4868a36af59d1f5d7741bf6.svg",
+    "static/media/nav-icon6.svg": "/NFT-Tickets-Sell/static/media/nav-icon6.ad671596bb90b54781e8d5109bfba23a.svg",
+    "static/media/nav-icon3.svg": "/NFT-Tickets-Sell/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
+    "static/media/nav-icon2.svg": "/NFT-Tickets-Sell/static/media/nav-icon2.12634321b98fb0248357c3aab640c2bf.svg",
+    "index.html": "/NFT-Tickets-Sell/index.html",
+    "static/media/nav-icon1.svg": "/NFT-Tickets-Sell/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
+    "main.8caf91d6.css.map": "/NFT-Tickets-Sell/static/css/main.8caf91d6.css.map",
+    "main.87ff3b33.js.map": "/NFT-Tickets-Sell/static/js/main.87ff3b33.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3877867.css",
-    "static/js/main.08872531.js"
+    "static/css/main.8caf91d6.css",
+    "static/js/main.87ff3b33.js"
   ]
 }
