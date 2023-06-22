@@ -50,8 +50,8 @@ export const Banner = () => {
     var img_url = '<img src="https://api.qrserver.com/v1/create-qr-code/?data='+tokenid+'&amp;size=200x200" alt="QRcode error" />';
     console.log(tokenid)
     const emailParams = {
-      to_name: "kaikai",
-      to_email: "karta2398980@gmail.com",
+      to_name: name,
+      to_email: email,
       qr_html: img_url,
     };
     console.log(img_url)
