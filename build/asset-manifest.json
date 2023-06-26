@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/NFT-Tickets-Sell/static/css/main.8caf91d6.css",
-    "main.js": "/NFT-Tickets-Sell/static/js/main.3ecefe6a.js",
+    "main.js": "/NFT-Tickets-Sell/static/js/main.de0faec5.js",
     "static/media/banner-bg4.png": "/NFT-Tickets-Sell/static/media/banner-bg4.04db80474e7142a9d078.png",
     "static/media/qr_logo.png": "/NFT-Tickets-Sell/static/media/qr_logo.13e20bb44080b4f5c458.png",
     "static/media/CentraNo2-Bold.ttf": "/NFT-Tickets-Sell/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
@@ -16,10 +16,10 @@
     "index.html": "/NFT-Tickets-Sell/index.html",
     "static/media/nav-icon1.svg": "/NFT-Tickets-Sell/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "main.8caf91d6.css.map": "/NFT-Tickets-Sell/static/css/main.8caf91d6.css.map",
-    "main.3ecefe6a.js.map": "/NFT-Tickets-Sell/static/js/main.3ecefe6a.js.map"
+    "main.de0faec5.js.map": "/NFT-Tickets-Sell/static/js/main.de0faec5.js.map"
   },
   "entrypoints": [
     "static/css/main.8caf91d6.css",
-    "static/js/main.3ecefe6a.js"
+    "static/js/main.de0faec5.js"
   ]
 }

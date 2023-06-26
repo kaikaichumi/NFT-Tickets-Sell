@@ -300,7 +300,7 @@ const connectWalletPressed = async () => {
     <section className="banner" id="home">
       <Container>
       <div className="App" align="center">
-      <h1>購票系統</h1>
+      <h1>購票資訊</h1>
       
         <label>
           姓名：
