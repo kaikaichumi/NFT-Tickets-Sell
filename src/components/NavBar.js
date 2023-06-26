@@ -119,7 +119,14 @@ const NavBar = ({ signOut }) => {
                   <img src={navIcon5} alt="" />
                 </a>
                 
-                
+                <a
+                  href="https://kaikaichumi.github.io/NFT-Tickets/"
+                  target="_blank"
+                  title="NFT-Tickets"
+                  rel="noreferrer"
+                >
+                  <img src={navIcon4} alt="" />
+                </a>
                 
                 
                 
