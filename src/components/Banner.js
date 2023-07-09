@@ -10,7 +10,7 @@ import emailjs from "emailjs-com";
 import React from 'react';
 import { connectWallet, getCurrentWalletConnected } from "../utils/interact";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import AES from 'crypto-js/aes';
 
 
 
@@ -47,8 +47,10 @@ export const Banner = () => {
   //email
   const email_send = async () => {
     var tokenid = await totalSupplyOfcall();
-    var img_url = '<img src="https://api.qrserver.com/v1/create-qr-code/?data='+tokenid+'&amp;size=200x200" alt="QRcode error" />';
+    var entokenid = AES.encrypt(tokenid.toString(), 'kaikai').toString();
+    var img_url = '<img src="https://api.qrserver.com/v1/create-qr-code/?data='+entokenid+'&amp;size=200x200" alt="QRcode error" />';
     console.log(tokenid)
+    console.log(entokenid)
     const emailParams = {
       to_name: name,
       to_email: email,

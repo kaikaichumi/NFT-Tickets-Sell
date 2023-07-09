@@ -5,7 +5,7 @@ import contractABI from "./abi.json";
 const web3 = createAlchemyWeb3(
   "https://polygon-mumbai.g.alchemy.com/v2/aC1N39LhBDnTkyZj40eYjhX5-9c73u_n"
 );
-const contractAddress = "0xae6641D4D292A92Ba4C595ED473964f8750b447B";
+const contractAddress = "0x89Dd0BffCa79607c707Af41d7bFFe32c6A8a02Ec";
 
 //0x85bbf85E11f2f3089358EFe9E5258ce6e9B1c2fF
 //call tokenURI 
